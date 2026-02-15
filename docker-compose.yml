@@ -1,0 +1,23 @@
+services:
+  web: &web
+    build: .
+    container_name: web
+    depends_on:
+      - "sqlite3"
+    ports:
+      - "3000:3000"
+    env_file: .env.development
+    volumes:
+      - .:/rails
+
+  web_test:
+    <<: *web
+    container_name: web_test
+    command:
+    ports:
+      - "3050:3000"
+    env_file: .env.test
+
+  sqlite3:
+    image: keinos/sqlite3:latest
+    container_name: sqlite
