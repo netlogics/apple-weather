@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe WeatherApi do
+RSpec.describe WeatherProviders::WeatherApi do
   let(:address) { build :address }
-  subject(:weather_api_klass) { WeatherApi }
+  subject(:weather_api_klass) { WeatherProviders::WeatherApi }
 
   describe '.new' do
     context 'required kwargs' do

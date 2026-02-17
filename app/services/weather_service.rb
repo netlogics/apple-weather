@@ -3,7 +3,7 @@ require 'forwardable'
 class WeatherService
   extend Forwardable
 
-  DEFAULT_PROVIDER_KLASS = WeatherApi
+  DEFAULT_PROVIDER_KLASS = WeatherProviders::WeatherApi
   DEFAULT_API_VERSION = "v1"
   DEFAULT_DAYS = 1
 
