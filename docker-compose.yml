@@ -18,6 +18,8 @@ services:
       - "3050:3000"
     env_file: .env.test
 
+# todo: create a custom image with sqlite3.26.0.
+# Relying on local mise install for now
   sqlite3:
     image: keinos/sqlite3:latest
     container_name: sqlite
